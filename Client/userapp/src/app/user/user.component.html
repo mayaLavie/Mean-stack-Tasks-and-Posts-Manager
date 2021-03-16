@@ -1,0 +1,51 @@
+
+
+
+<div [ngClass]="isTaskCompleted ? 'redBorder' : 'greenBorder'"  [ngStyle]="userChossen?{'background-color': 'rgb(255, 184, 184)'} : {'background-color': 'white'}"  
+>
+      
+  
+  
+  <div (mouseover)="closeWindow()" (click)="todosposts(user._id) "    >ID : {{user._id}} </div><br/><br/>
+  <form #f="ngForm"  (ngSubmit)="update()">
+    <mat-form-field  class="input" hideRequireMarker appearance="outline">
+      <mat-label>Name</mat-label>
+      <input  matInput required [(ngModel)]="user.Name"  type="text" name="Name">
+    </mat-form-field><br/>
+   
+    <mat-form-field class="input" hideRequireMarker appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput required [(ngModel)]="user.Email" type="text" name="Email" >
+    </mat-form-field><br/>
+   
+   
+  <div class="Address" [style.display] = "isOtherDataVisible? 'block' : 'none'"  >
+
+    <mat-form-field class="input" hideRequireMarker appearance="outline" >
+      <mat-label>Street</mat-label>
+      <input matInput required [(ngModel)]="user.Street"  type="text" name="Street"  >
+    </mat-form-field><br/>
+   
+    <mat-form-field class="input" hideRequireMarker appearance="outline">
+      <mat-label>City</mat-label>
+      <input matInput required [(ngModel)]="user.City"  type="text" name="City"  >
+    </mat-form-field><br/>
+    
+    <mat-form-field class="input" hideRequireMarker appearance="outline">
+      <mat-label>Zipcode</mat-label>
+      <input matInput required [(ngModel)]="user.Zipcode"  type="text" name="Zipcode"  >
+    </mat-form-field><br/>
+    
+
+   
+  </div><br/>
+ 
+  <button  mat-stroked-button  style="background-color: rgb(206, 206, 206);"  (mouseover)="OtherData()" (click)="hideData()">Address</button>
+  <button  mat-stroked-button style="position:relative; left: 100px" [disabled]="!f.valid" type="submit"   >Update</button>
+  <button  mat-stroked-button  style="position:relative; left: 120px" (click)="delete()">Delete </button>
+
+</form>
+
+
+
+</div>

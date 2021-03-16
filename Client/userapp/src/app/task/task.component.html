@@ -1,0 +1,15 @@
+<div >
+
+
+<Div class="TaskDiv"  >
+
+<div >
+Task :         {{task.title}}<br/>
+Completed :    {{task.completed}}
+
+<button  mat-stroked-button  style="position:relative; left: 230px" (click)="taskStatus()" 
+                            [style.display]="isButtonVisible? 'none' : 'block' ">Mark Completed </button>
+
+</div>
+</Div>
+</div>

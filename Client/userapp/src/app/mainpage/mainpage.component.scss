@@ -1,0 +1,16 @@
+.mainPageDiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    //justify-content: center;
+}
+.staticDiv{
+    width: 30%;
+}
+.DynamicDiv{
+    width: 30%;
+    margin-top: 100px;
+    
+    //-ms-flex-align: baseline;
+}

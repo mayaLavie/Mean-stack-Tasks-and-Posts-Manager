@@ -1,0 +1,27 @@
+<div>
+   
+<div class="addDiv">
+
+    <h3>Add User</h3>
+    <form #f="ngForm" (ngSubmit)="addUser()">
+
+        <mat-form-field  class="input" hideRequireMarker appearance="outline">
+            <mat-label>Name</mat-label>
+            <input  matInput required [(ngModel)]="user.Name"  type="text" name="Name">
+          </mat-form-field><br/>
+          <mat-form-field class="input" hideRequireMarker appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput required [(ngModel)]="user.Email" type="text" name="Email" >
+          </mat-form-field><br/>
+          <button  mat-stroked-button style="position:relative; left: 285px" [disabled]="!f.valid" type="submit"> Add </button>
+          <button  mat-stroked-button  style="position:relative; left: 135px" (click)="cancel()">Cancel </button>
+
+    </form>
+
+
+
+</div>
+
+
+
+</div>

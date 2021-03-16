@@ -1,0 +1,22 @@
+<div  style="position:relative; left: 250px">
+
+  <h1 style="position:relative; left: 270px">   Welcome To Users Web Site  </h1>
+
+    
+<mat-form-field >
+    <mat-label>Search</mat-label>
+    <input matInput  class="search" type="text" name="Search" placeholder="Search" [(ngModel)]="phrase" (keyup)="userSearch()" >
+  </mat-form-field>
+
+  <button  mat-stroked-button  style="position:relative; left: 80px" (click)="addUser()">   Add New User   </button>
+
+
+ 
+
+
+<app-user *ngFor = "let user of users" [user] ="user" ></app-user>
+
+    
+
+
+</div>

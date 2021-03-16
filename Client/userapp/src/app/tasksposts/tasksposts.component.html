@@ -1,0 +1,63 @@
+<div class="ForTasksAndPosts"  style="position:relative; right: 250px">
+
+
+    <mat-label>&nbsp;&nbsp; Task List for  {{user.Name}}</mat-label>
+
+<div class="AllTasks"    [style.display] = "TaskListOn? 'block' : 'none'" >
+    
+<button  mat-stroked-button  style="position:relative; left: 310px" (click)="addTask()">Add Task </button>
+<app-task  *ngFor = "let task of user.Tasks" [task]="task"   (event)="UpdateTaskStatus($event)" ></app-task>
+</div>
+
+<div  [style.display] = "AddTaskOn? 'block' : 'none'">
+ <h4></h4><br/>
+<div class="AddTask">
+     
+    <mat-form-field >
+        <mat-label> Enter Task For  {{user.Name}}</mat-label>
+        <input matInput   type="text"  placeholder="Add New Task" [(ngModel)]="Title"  >
+      </mat-form-field>
+    <button  mat-stroked-button  style="position:relative; left: 120px" (click)="NewTask()">Add  </button><br/>
+    <button  mat-stroked-button  style="position:relative; left: 290px" (click)="TaskListOn = !TaskListOn ; AddTaskOn = !AddTaskOn">Cancel  </button>
+
+
+</div>
+
+
+</div>
+<mat-label>&nbsp;&nbsp; Post of  {{user.Name}}</mat-label>
+
+<div  class="AllTasks"   [style.display] = "PostListOn? 'block' : 'none'" >
+
+<button  mat-stroked-button  style="position:relative; left: 310px"  (click)="addPost()">Add Post </button>
+<app-post *ngFor = "let post of user.Posts" [post]="post"></app-post>
+</div>
+
+<div class="AddTask" [style.display] = "AddPostOn? 'block' : 'none'">
+     
+    <mat-form-field >
+        <mat-label>New Post For  {{user.Name}}</mat-label>
+        <input matInput   type="text"  placeholder="Title" [(ngModel)]="PostTitle"  >
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>Body</mat-label>
+        <input matInput   type="text"  placeholder="Body" [(ngModel)]="PostBody"  >
+      </mat-form-field><br/>
+    <button  mat-stroked-button  style="position:relative; left: 220px" (click)="NewPost()">Add  </button>
+    <button  mat-stroked-button  style="position:relative; left: 225px" (click)="PostListOn = !PostListOn ; AddPostOn = !AddPostOn">Cancel  </button>
+
+
+</div>
+
+
+
+
+
+
+</div>
+    
+
+   
+
+
+
